@@ -1,10 +1,7 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
 #include "../inc/HuffmanCoding.h"
-#include "../inc/tools.h"
 
+//Make, allocate and return a new t_allNodes struct to save an array
+//and number of t_nodes structs
 t_allNodes *newNodesArray(size_t capacity)
 {
 	t_allNodes *tmp = (t_allNodes *)malloc(sizeof(t_allNodes));
@@ -16,6 +13,8 @@ t_allNodes *newNodesArray(size_t capacity)
 	return (tmp);
 }
 
+//Return a allocated string with the diferents characters used in the
+//original string
 char *takeChars(char *str)
 {
 	size_t	i = -1;
@@ -28,6 +27,8 @@ char *takeChars(char *str)
 	return (tmp);
 }
 
+//Fuction to sort by repetition order, from lowest to highest,
+//the t_nodes array con t_nodes struct
 void	sortNodes(t_allNodes *allNodes)
 {
 	size_t	i;
@@ -51,6 +52,9 @@ void	sortNodes(t_allNodes *allNodes)
 	}
 }
 
+
+//Return de t_allNodes struct, filled with t_nodes array, counted
+//and sorted, given the original string
 t_allNodes *makeNodesArray(char *str)
 {
 	char		*chars = takeChars(str);
@@ -71,6 +75,7 @@ t_allNodes *makeNodesArray(char *str)
 	return array;
 }
 
+//Begin of the Huffman Coding develop
 int	main(void)
 {
 	char	*data = "AAAAAAAAAAAAAAABBBBBBBBCCCCDDE";

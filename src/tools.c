@@ -1,7 +1,7 @@
 #include "../inc/tools.h"
 
-//#include <stdio.h>
-
+//Given a string, add a new char, freeing the original
+//and allocating the new one
 char	*addChar(char *str, char c)
 {
 	size_t size = strlen(str) + 2;
@@ -22,6 +22,7 @@ char	*addChar(char *str, char c)
 	return (tmp);
 }
 
+//Simple fuction to check if a char is on a string
 bool	isOnStr(char *str, char c)
 {
 	size_t i = 0;
@@ -32,6 +33,8 @@ bool	isOnStr(char *str, char c)
 	return (false);
 }
 
+//Simple function to count the number of repetitions
+//in a string
 size_t	getFreq(char *str, char c)
 {
 	size_t i = -1;
